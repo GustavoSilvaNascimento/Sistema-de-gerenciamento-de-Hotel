@@ -30,12 +30,7 @@ CREATE TABLE Reservas (
     FOREIGN KEY (id_quarto) REFERENCES Quartos(id),
     FOREIGN KEY (id_cliente) REFERENCES Cliente(id)
 );
-/* 
-a tabela Reservas
-Relaciona-se com a tabela quarto 
-e cliente
 
-*/
 CREATE TABLE Pagamentos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_reserva INT NOT NULL,
@@ -44,11 +39,7 @@ CREATE TABLE Pagamentos (
     metodo ENUM('Cartão de Crédito', 'Pix', 'Cartão de debito', 'Dinheiro') NOT NULL,
     FOREIGN KEY (id_reserva) REFERENCES Reservas(id)
 );
-/* 
-a tabela Pagamentos
-Relaciona-se com a tabela Reservas
-Cada pagamento é vinculado a uma reserva
-*/
+
 CREATE TABLE Funcionarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -56,6 +47,7 @@ CREATE TABLE Funcionarios (
     login VARCHAR(50) UNIQUE NOT NULL,
     senha VARCHAR(255) NOT NULL
 );
+
 INSERT INTO Funcionarios (nome, cargo, login, senha) 
 VALUES ('Administrador', 'Mestre', 'Admin', 'Admin');
 
