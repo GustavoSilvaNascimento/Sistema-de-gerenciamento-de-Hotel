@@ -18,8 +18,12 @@ Requisitos:
 -jdk java 24
 -mysql-connector-j-9.3.0
 
-Detalhes:
+Como configurar:
+
 criar um projeto novo de java e colar o arquivo src nele.
+configurar um novo banco de dados com o script: hotel_BDD_1.0.sql
+Adicionar o mysql connector em libraries do projeto.
+modificar o arquivo DAO --> ConexaoDao.java com as informações para acessar o banco de dados
 
 
 
